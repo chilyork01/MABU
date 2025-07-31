@@ -31,6 +31,16 @@ export default function Producto() {
     setTimeout(() => setAgregado(false), 2000);
   };
 
+  // Cargar la imagen usando require si existe
+  let imagenSrc = '';
+  try {
+    if (producto.imagen) {
+      imagenSrc = require(`../assets/imagenes/${producto.imagen}`);
+    }
+  } catch (error) {
+    imagenSrc = '';
+  }
+
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
       <Link to="/catalogo" className="text-pink-600 underline mb-4 inline-block">
@@ -40,9 +50,9 @@ export default function Producto() {
       <div className="bg-white rounded-xl shadow-lg p-6 grid md:grid-cols-2 gap-8">
         {/* Imagen del producto */}
         <div className="flex justify-center">
-          {producto.imagen ? (
+          {imagenSrc ? (
             <img
-              src={producto.imagen}
+              src={imagenSrc}
               alt={producto.nombre}
               className="w-64 h-64 object-cover rounded-lg"
             />

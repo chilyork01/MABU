@@ -6,7 +6,7 @@ export default function ProductCard({ producto }) {
       <div className="bg-white rounded-xl shadow p-4 flex flex-col items-center hover:shadow-lg transition-shadow cursor-pointer">
         {producto.imagen && (
           <img
-            src={producto.imagen}
+            src={require(`../assets/imagenes/${producto.imagen}`)}
             alt={producto.nombre}
             className="w-24 h-24 object-cover mb-2 rounded"
           />
