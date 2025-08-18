@@ -14,6 +14,9 @@ import SobreNosotros from "./pages/SobreNosotros";
 import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import Testimonios from "./pages/Testimonios";
+import Gracias from './pages/Gracias';
+import PagoFallido from './pages/PagoFallido';
+import PagoPendiente from './pages/PagoPendiente';
 import './index.css';
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
               <Route path="/sobre-nosotros" element={<SobreNosotros />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/testimonios" element={<Testimonios />} />
+              <Route path="/gracias" element={<Gracias />} />
+<Route path="/pago-fallido" element={<PagoFallido />} />
+<Route path="/pago-pendiente" element={<PagoPendiente />} />
             </Routes>
           </main>
           <Footer />
